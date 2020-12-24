@@ -3,6 +3,7 @@ namespace Qasim\LaravelMdEditor;
 
 use Illuminate\Routing\Router;
 use Illuminate\Support\ServiceProvider;
+use Qasim\LaravelMdEditor\Console\EmojisCommand;
 
 class MdEditorServiceProvider extends ServiceProvider
 {

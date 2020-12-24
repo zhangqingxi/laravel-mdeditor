@@ -1,7 +1,7 @@
 {
     "name": "qasim/laravel-mdeditor",
     "description": "editor.md for laravel",
-    "keywords": ["laravel", "editor.md", "markdown", "mdeditor", "editor", "zhangqingxi"],
+    "keywords": ["laravel", "editor.md", "markdown", "mdeditor", "editor", "zhangqingxi", "qasim"],
     "license": "MIT",
     "authors": [
         {

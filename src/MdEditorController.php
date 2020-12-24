@@ -1,5 +1,5 @@
 <?php
-namespace Qasim\MdEditor;
+namespace Qasim\LaravelMdEditor;
 
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;

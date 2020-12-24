@@ -20,21 +20,18 @@
         "php": "^7.1.8 || ^8.0",
         "ext-json": "*"
     },
-    "require-dev": {
-
-    },
     "autoload": {
         "psr-4": {
-            "Qasim\\MdEditor\\": "src/"
+            "Qasim\\LaravelMdEditor\\": "src/"
         },
         "files": [
             "src/helpers.php"
         ]
     },
     "extra": {
-        "laravel":{
+        "laravel": {
             "providers": [
-                "Qasim\\MdEditor\\MdEditorServuceProvider"
+                "Qasim\\LaravelMdEditor\\MdEditorServiceProvider"
             ]
         }
     }

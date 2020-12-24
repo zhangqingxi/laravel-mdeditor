@@ -62,7 +62,7 @@ return [
     'config' => [
         'width' => "100%", //可以是百分比也可以是具体数值
         'height' => '100%',
-        'path'  => '/app/Qasim/MarkdownEditor/lib/',
+        'path'  => '/vendor/mdeditor/lib/',
         'theme' => '',
         'editorTheme' => 'default', //编辑器区域内主题
         'previewTheme' => '', //预览区域主题

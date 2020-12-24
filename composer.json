@@ -25,7 +25,7 @@
             "Qasim\\LaravelMdEditor\\": "src/"
         },
         "files": [
-            "src/helpers.php"
+            "src/Helpers.php"
         ]
     },
     "extra": {

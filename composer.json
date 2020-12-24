@@ -1,0 +1,41 @@
+{
+    "name": "Qasim/laravel-mdeditor",
+    "description": "editor.md for laravel",
+    "keywords": ["laravel", "editor.md", "markdown", "mdeditor", "editor", "zhangqingxi"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Qasim",
+            "email": "15750783791@163.com",
+            "homepage": "https://github.com/zhangqingxi"
+        }
+    ],
+    "homepage": "https://github.com/zhangqingxi/laravel-md-editor",
+    "support": {
+        "source": "https://github.com/zhangqingxi/laravel-md-editor",
+        "issues": "https://github.com/zhangqingxi/laravel-md-editor/issues"
+    },
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.8 || ^8.0",
+        "ext-json": "*"
+    },
+    "require-dev": {
+
+    },
+    "autoload": {
+        "psr-4": {
+            "Qasim\\MdEditor\\": "src/"
+        },
+        "files": [
+            "src/helpers.php"
+        ]
+    },
+    "extra": {
+        "laravel":{
+            "providers": [
+                "Qasim\\MdEditor\\MdEditorServuceProvider"
+            ]
+        }
+    }
+}

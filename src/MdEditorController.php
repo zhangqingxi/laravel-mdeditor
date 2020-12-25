@@ -7,7 +7,7 @@ use Illuminate\Routing\Controller;
 class MdEditorController extends Controller
 {
 
-    public function serve(Request $request)
+    public function upload(Request $request)
     {
 
         print_r(1111);

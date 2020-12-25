@@ -1,27 +1,5 @@
 <?php
 
-if (!function_exists('format_json_message')) {
-    /**
-     * 格式化表单校验消息，并进行json数组化预处理
-     *
-     * @param array $messages 未格式化之前数组
-     * @param array $json 原始json数组数据
-     * @return array
-     */
-    function format_json_message(array $messages, array $json): array
-    {
-        $reasons = '';
-        foreach ($messages->all(':message') as $message) {
-            $reasons .= $message . ' ';
-        }
-        $info = '失败原因为：' . $reasons;
-        $json = array_replace($json, ['info' => $info]);
-        return $json;
-    }
-
-
-}
-
 if (!function_exists('editor_css')) {
     /**
      * css文件

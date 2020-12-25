@@ -48,6 +48,10 @@ class MdEditorServiceProvider extends ServiceProvider
                 return new EmojisCommand();
             }
         );
+        $this->commands(
+            'command.mdeditor.emojis'
+        );
+
     }
 
     /**
@@ -58,7 +62,7 @@ class MdEditorServiceProvider extends ServiceProvider
     {
         if (!$this->app->routesAreCached()) {
             $router->group(['namespace' => __NAMESPACE__], function ($router) {
-                $router->any(config('mdeditor.config.imageUploadURL'), 'MdEditorController@serve');
+                $router->any(config('mdeditor.config.imageUploadURL'), 'MdEditorController@upload');
             });
         }
     }

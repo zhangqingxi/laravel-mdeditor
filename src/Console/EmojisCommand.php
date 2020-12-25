@@ -29,49 +29,80 @@ class EmojisCommand extends Command
     public function emojis()
     {
 
-        $emojis = config('mdeditor.emoji');
+        $emoji_json = file_get_contents(public_path('vendor/mdeditor/plugins/emoji-dialog/emoji.json'));
+
+        $emojis = json_decode($emoji_json, true);
+
+        //github-emoji
+        $emojis['github-emoji'] = $this->githubemoji();
+
+        //twitter-emoji
+        $emojis['twemoji'] = $this->twitteremoji();
+
+        file_put_contents(public_path('vendor/mdeditor/plugins/emoji-dialog/emoji.json'), json_encode($emojis));
+
+    }
+
+    /**
+     * github emoji
+     * @return array
+     */
+    public function githubemoji(): array
+    {
+
+        $config = config('mdeditor.emojis.github');
 
         $res = [];
 
-        foreach ($emojis as $emoji) {
+        $html = file_get_contents($config['url']);
 
-            $html = strtolower(file_get_contents($emoji['url']));
+        foreach ($config['category'] as $item){
 
-            foreach ($emoji['category'] as $category) {
+            preg_match('/<h2>'.$item.'<\/h2>[\s\S]+?<\/ul>/is', $html, $matches);
 
-                preg_match_all($category['content_regex'], $html, $matches);
+            preg_match_all('/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i', $matches[0] ?? '', $matches);
 
-                if ($list = $matches[0][0]) {
-
-                    preg_match_all($category['list_regex'], $list, $matches);
-
-                    if ($matches[1]) {
-
-                        if ($category['name']) {
-
-                            $res[$emoji['name']][] = ['category' => $category['name'], 'list' => $matches[1]];
-
-                        } else {
-
-                            $res[$emoji['name']] = $matches[1];
-
-                        }
-
-                    }
-
-                }
-
-            }
+            $res[] = ['category' => $item, 'list' => $matches[1] ?? []];
 
         }
 
-        $emoji_json = file_get_contents(__DIR__ . '/../assets/plugins/emoji-dialog/emoji.json');
+        return $res;
 
-        $emoji_json = json_decode($emoji_json, true);
+    }
 
-        $emoji_json = $res + $emoji_json;
 
-        file_put_contents(__DIR__ . '/../assets/plugins/emoji-dialog/emoji.json', json_encode($emoji_json));
+    /**
+     * twitter emoji
+     * @return array
+     */
+    public function twitteremoji(): array
+    {
+
+        $config = config('mdeditor.emojis.twitter');
+
+        $html = file_get_contents($config['url']);
+
+        preg_match('/<ul[\s]class="emoji-list">[\s\S]+?<\/ul>/is', $html, $matches);
+
+        preg_match_all('/<li>(.*?);<\/li>/i', $matches[0] ?? '', $matches);
+
+        $res = [];
+
+        foreach ($matches[1] ?? [] as $item){
+
+            $file = str_replace(['&#x', ';'], ['', '-'], strtolower($item));
+
+            if(stripos($file, 'fe0f') !== false && count(explode('-', $file )) <= 2){
+
+                $file = str_replace('-fe0f', '', $file);
+
+            }
+
+            $res[] = $file;
+
+        }
+
+        return $res;
 
     }
 

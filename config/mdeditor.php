@@ -6,56 +6,21 @@
 return [
     'disk' => 'public',
 
-    'emoji' => [
-        [
+    'emojis' => [
+        'github' => [
             'name' => 'github-emoji',
-            'url' => 'http://www.webfx.com/tools/emoji-cheat-sheet/',
-            'category' =>
-                [
-                    [
-                        'name' => 'People',
-                        'content_regex' => '/<h2>People<\/h2>[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i'
-                    ],
-                    [
-                        'name' => 'Nature',
-                        'content_regex' => '/<h2>Nature<\/h2>[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i'
-                    ],
-                    [
-                        'name' => 'Objects',
-                        'content_regex' => '/<h2>Objects<\/h2>[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i'
-                    ],
-                    [
-                        'name' => 'Places',
-                        'content_regex' => '/<h2>Places<\/h2>[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i'
-                    ],
-                    [
-                        'name' => 'Symbols',
-                        'content_regex' => '/<h2>Symbols<\/h2>[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/:<span[\s\S]+?data-alternative-name="[\s\S]+?">(.*)<\/span>:/i'
-                    ],
-                ],
-            'path' => '//www.webfx.com/tools/emoji-cheat-sheet/graphics/emojis/',
-            'ext' => '.png'
+            'url' => 'https://www.webfx.com/tools/emoji-cheat-sheet/',
+            'category' => ['People', 'Nature', 'Objects', 'Places', 'Symbols'],
+            'path' => 'https://www.webfx.com/tools/emoji-cheat-sheet/graphics/emojis/',
+            'ext' => '.png',
         ],
-        [
+        'twitter' => [
             'name' => 'twemoji',
-            'url' => 'http://twemoji.maxcdn.com/2/test/preview.html',
-            'category' =>
-                [
-                    [
-                        'name' => '',
-                        'content_regex' => '/<ul[\s]class="emoji-list">[\s\S]+?<\/ul>/i',
-                        'list_regex' => '/<li>&#x(.*?);[\s\S]*?<\/li>/i'
-                    ],
-                ],
-            'path' => '//twemoji.maxcdn.com/72x72/',
+            'url' => 'https://twemoji.maxcdn.com/2/test/preview.html',
+            'category' => [],
+            'path' => 'https://twemoji.maxcdn.com/v/13.0.1/72x72/',
             'ext' => '.png'
         ],
-//        ['path' => '//twemoji.maxcdn.com/72x72/', 'ext' => '.png'],
     ],
 
     // 配置

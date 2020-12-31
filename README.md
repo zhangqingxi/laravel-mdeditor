@@ -14,7 +14,7 @@ PHP 版本7.x以上
 # 配置
 1. 发布配置文件和资源
     ```shell
-    php artisan vendor:publish --provider='Qasim\LaravelMdEditor\UEditorServiceProvider'
+    $ php artisan vendor:publish --provider='Qasim\LaravelMdEditor\UEditorServiceProvider'
     ```
 2. 模板引入编辑器
     ```php
@@ -35,11 +35,11 @@ PHP 版本7.x以上
 # 其他
 1. 更新emoji
    ```shell
-    $ php artisan mdeditor:emojis
-    ```
+   $ php artisan mdeditor:emojis
+   ```
 2. 创建软连接
-    ```shell
-    $ php artisan storage:link
-    ```
+   ```shell
+   $ php artisan storage:link
+   ```
 
 

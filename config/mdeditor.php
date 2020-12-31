@@ -64,7 +64,7 @@ return [
         'saveHTMLToTextarea' => true,//保存 HTML 到 Textarea
         'disabledKeyMaps' => [],
         'imageUpload' => true, //是否开启图片上传
-        'imageFormats' => ["jpg", "jpeg", "gif", "png", "bmp", "webp"],//图片上传格式
+        'imageFormats' => ["jpg", "jpeg", "gif", "png", "bmp"],//图片上传格式
         'imageUploadURL' => 'MdEditor/uploadImage',
         'crossDomainUpload' => false, //跨域上传
         'uploadCallbackURL' => "", //跨域上传的url
@@ -86,5 +86,13 @@ return [
         'toolbar' => true,
         'toolbarAutoFixed' => true,
         'toolbarIcons' => "full", //工具栏图标模式 full, simple, mini
+    ],
+
+    'upload' => [
+        'imageFieldName' => 'editormd-image-file', //提交的图片表单名称
+        'imageMaxSize' =>  2 * 1024 * 1024, // 上传大小限制，单位B
+        'imageAllowFiles' => ['.png', '.jpg', '.jpeg', '.gif', '.bmp'], //上传图片格式显示
+        'imagePathFormat' => '/uploads/image/{yyyy}/{mm}/{dd}/', //上传保存路径,可以自定义保存路径和文件名格式
     ]
+
 ];

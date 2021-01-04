@@ -32,13 +32,13 @@ return [
         'editorTheme' => 'default', //编辑器区域内主题
         'previewTheme' => '', //预览区域主题
         'markdown' => '', //编辑器内显示的内容
-        'watch' => false, //是否关闭实时预览
+        'watch' => false, //是否开启实时预览
         'previewCodeHighlight' => true, //预览代码高亮显示
         'delay' => 300, //延迟解析到预览区域 单位ms
         'placeholder' => "Enjoy Markdown! coding now...",
         'gotoLine' => true, //是否开启跳转行
         'codeFold' => true, //是否开启代码折叠
-        'autoHeight' => true,
+        'autoHeight' => false,
         'autoFocus' => true,
         'autoCloseTags' => true,
         'searchReplace' => true, //是否开启搜索和替换功能

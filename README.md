@@ -14,7 +14,7 @@ PHP 版本7.x以上
 # 配置
 1. 发布配置文件和资源
     ```shell
-    $ php artisan vendor:publish --provider='Qasim\LaravelMdEditor\UEditorServiceProvider'
+    $ php artisan vendor:publish --provider='Qasim\LaravelMdEditor\MdEditorServiceProvider'
     ```
 2. 模板引入编辑器
     ```php

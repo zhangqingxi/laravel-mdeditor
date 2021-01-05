@@ -65,7 +65,7 @@ return [
         'disabledKeyMaps' => [],
         'imageUpload' => true, //是否开启图片上传
         'imageFormats' => ["jpg", "jpeg", "gif", "png", "bmp"],//图片上传格式
-        'imageUploadURL' => 'MdEditor/uploadImage',
+        'imageUploadURL' => '/MdEditor/uploadImage',
         'crossDomainUpload' => false, //跨域上传
         'uploadCallbackURL' => "", //跨域上传的url
         'toc' => true,//是否开启目录
